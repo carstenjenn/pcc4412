@@ -1,4 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element extends="task" label="Loaner Request" max_length="40" name="x_snc_loaner_reque_loaner_request" type="collection"/>
+    <element extends="task" label="Loaner Request" max_length="40" name="x_snc_loaner_reque_loaner_request" sizeclass="4" type="collection">
+        <element label="MyCol" max_length="40" name="mycol" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="cmdb_ci_computer" label="Item type" max_length="40" name="u_choice_5" type="string">
+            <choice>
+                <element label="Laptop" sequence="0" value="cmdb_ci_computer"/>
+                <element label="Mobile phone" sequence="1" value="cmdb_ci_mobile_device"/>
+                <element label="Projector" sequence="2" value="cmdb_ci_projector"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="sc" label="Depot" max_length="40" name="u_choice_6" type="string">
+            <choice>
+                <element label="New York" sequence="0" value="ny"/>
+                <element label="London" sequence="1" value="london"/>
+                <element label="Buenos Aires" sequence="2" value="ba"/>
+                <element label="Santa Clara" sequence="3" value="sc"/>
+                <element label="Singapore" sequence="4" value="singapore"/>
+                <element label="Sydney" sequence="5" value="sydney"/>
+                <element label="Other" sequence="6" value="other"/>
+            </choice>
+        </element>
+        <element label="Start date" mandatory="true" max_length="40" name="u_glide_date_time_3" type="glide_date_time"/>
+        <element label="End date" mandatory="true" max_length="40" name="u_glide_date_time_4" type="glide_date_time"/>
+        <element label="Requestes for" mandatory="true" max_length="32" name="u_reference_2" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Other" max_length="40" name="u_string_1" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Location to be used" max_length="40" name="u_string_7" type="string"/>
+    </element>
 </database>
