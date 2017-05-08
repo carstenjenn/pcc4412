@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
     <element extends="task" label="Loaner Request" max_length="40" name="x_snc_loaner_reque_loaner_request" sizeclass="4" type="collection">
+        <element label="Overdue reminder" max_length="40" name="last_overdue_reminder" type="glide_date_time"/>
         <element label="MyCol" max_length="40" name="mycol" type="string"/>
+        <element label="Overdue count" max_length="40" name="overdue_count" type="integer"/>
+        <element label="Return reminder" max_length="40" name="return_reminder" type="glide_date_time"/>
         <element attributes="edge_encryption_enabled=true" choice="3" default="cmdb_ci_computer" label="Item type" max_length="40" name="u_choice_5" type="string">
             <choice>
                 <element label="Laptop" sequence="0" value="cmdb_ci_computer"/>
@@ -20,6 +23,7 @@
                 <element label="Other" sequence="6" value="other"/>
             </choice>
         </element>
+        <element label="Pick up reminder" max_length="40" name="u_glide_date_time_1" type="glide_date_time"/>
         <element label="Start date" mandatory="true" max_length="40" name="u_glide_date_time_3" type="glide_date_time"/>
         <element label="End date" mandatory="true" max_length="40" name="u_glide_date_time_4" type="glide_date_time"/>
         <element label="Requestes for" mandatory="true" max_length="32" name="u_reference_2" reference="sys_user" type="reference"/>
